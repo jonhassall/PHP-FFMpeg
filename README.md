@@ -403,6 +403,12 @@ method. It only accepts audio filters.
 You can build your own filters and some are bundled in PHP-FFMpeg - they are
 accessible through the `FFMpeg\Media\Audio::filters` method.
 
+To use the [loudness normalizing filter](https://ffmpeg.org/ffmpeg-filters.html#loudnorm) custom filter:
+
+```php
+$audio->filters()->custom('loudnorm=I=-16:TP=-1.5:LRA=11');
+```
+
 ##### Clipping
 Cuts the audio at a desired point.
 
